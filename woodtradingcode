@@ -1,0 +1,67 @@
+# woodtradingcode
+
+--This is where I construct the functions.
+--The first one is to get wood planks, but you will have to fork up some cobblestone to do so.
+--To make the function run, you will need 1 cobblestone in the chest, and I will provide the planks in slot 1.
+ 
+function woodplanks()
+ 
+  if turtle.inspect() "minecraft:cobblestone" then
+    turtle.suck()
+  end
+  for x = 1,1 do  
+    turtle.select( 1 )
+    turtle.drop()
+  end  
+end
+ 
+--This one allows you to purchase regular wood blocks, provided that you can afford to give some stone.
+--You can put 1 stone in the chest, and I will give the wood in slot 2.
+ 
+function wood()
+ 
+  if turtle.inspect() "minecraft:stone" then
+    turtle.suck()
+  end  
+  for x = 1,4 do
+    turtle.select( 2 )
+    turtle.drop()
+  end
+end
+ 
+--This one will give you stairs, with a small fee of a crafting table.
+--Again, you will have to put something in the chest. This time, it's a crafting table.
+--I'll put some stairs in slot 3.
+ 
+function oakstairs()
+ 
+  if turtle.inspect() "minecraft:crafting_table" then
+    turtle.suck()
+  end
+  for x = 1,32 do
+    turtle.select( 3 )
+    turtle.drop()
+  end
+end
+ 
+--Finally, this one will give you some fence, if you can buy it with pumpkins.
+--Last, you need to provide a pumpkin to the chest.
+--I'll give you some oak fence in slot #4.
+ 
+function oakfence()
+ 
+  if turtle.inspect() "minecraft:pumpkin" then
+    turtle.suck()
+  end
+  for x = 1,4 do
+    turtle.select( 4 )
+    turtle.drop()
+  end
+end
+ 
+--Now, I'll make the functions run.
+ 
+woodplanks()
+wood()
+oakstairs()
+oakfence()
