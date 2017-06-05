@@ -6,7 +6,7 @@
  
 function woodplanks()
  
-  if turtle.inspect() "minecraft:cobblestone" then
+  if turtle.inspect() == "minecraft:cobblestone" then
     turtle.suck()
   end
   for x = 1,1 do  
@@ -20,7 +20,7 @@ end
  
 function wood()
  
-  if turtle.inspect() "minecraft:stone" then
+  if turtle.inspect() == "minecraft:stone" then
     turtle.suck()
   end  
   for x = 1,4 do
@@ -35,7 +35,7 @@ end
  
 function oakstairs()
  
-  if turtle.inspect() "minecraft:crafting_table" then
+  if turtle.inspect() == "minecraft:crafting_table" then
     turtle.suck()
   end
   for x = 1,32 do
@@ -50,7 +50,7 @@ end
  
 function oakfence()
  
-  if turtle.inspect() "minecraft:pumpkin" then
+  if turtle.inspect() == "minecraft:pumpkin" then
     turtle.suck()
   end
   for x = 1,4 do
