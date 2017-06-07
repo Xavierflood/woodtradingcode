@@ -4,6 +4,7 @@
 --The first one is to get wood planks, but you will have to fork up some cobblestone to do so.
 --To make the function run, you will need 1 cobblestone in the chest, and I will provide the planks in slot 1.
 --The turtle.inspect() command does not work. I need to use a special inspect command that I don't know. 
+--The local boolian command allows you to do a basic inspect command in a different form.
 
 local bool, stuff = turtle.inspect()
 
@@ -61,6 +62,7 @@ function oakfence()
 end
  
 --Now, I'll make the functions run.
+--I put one function after the other so that if one doesn't work, it will go to the next one.
  
 woodplanks()
 wood()
