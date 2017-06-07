@@ -3,16 +3,16 @@
 --This is where I construct the functions.
 --The first one is to get wood planks, but you will have to fork up some cobblestone to do so.
 --To make the function run, you will need 1 cobblestone in the chest, and I will provide the planks in slot 1.
- 
+--The turtle.inspect() command does not work. I need to use a special inspect command that I don't know. 
+
+
 function woodplanks()
  
   if turtle.inspect() == "minecraft:cobblestone" then
     turtle.suck()
-  end
-  for x = 1,1 do  
+  end 
     turtle.select( 1 )
-    turtle.drop()
-  end  
+    turtle.drop()  
 end
  
 --This one allows you to purchase regular wood blocks, provided that you can afford to give some stone.
