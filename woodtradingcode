@@ -5,10 +5,11 @@
 --To make the function run, you will need 1 cobblestone in the chest, and I will provide the planks in slot 1.
 --The turtle.inspect() command does not work. I need to use a special inspect command that I don't know. 
 
+local bool, stuff = turtle.inspect()
 
 function woodplanks()
  
-  if turtle.inspect() == "minecraft:cobblestone" then
+  if stuff.name == "minecraft:cobblestone" then
     turtle.suck()
   end 
     turtle.select( 1 )
@@ -20,7 +21,7 @@ end
  
 function wood()
  
-  if turtle.inspect() == "minecraft:stone" then
+  if stuff.name == "minecraft:stone" then
     turtle.suck()
   end  
   for x = 1,4 do
@@ -35,7 +36,7 @@ end
  
 function oakstairs()
  
-  if turtle.inspect() == "minecraft:crafting_table" then
+  if stuff.name == "minecraft:crafting_table" then
     turtle.suck()
   end
   for x = 1,32 do
@@ -50,7 +51,7 @@ end
  
 function oakfence()
  
-  if turtle.inspect() == "minecraft:pumpkin" then
+  if stuff.name == "minecraft:pumpkin" then
     turtle.suck()
   end
   for x = 1,4 do
