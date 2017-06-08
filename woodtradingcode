@@ -3,19 +3,22 @@
 --This is where I construct the functions.
 --The first one is to get wood planks, but you will have to fork up some cobblestone to do so.
 --To make the function run, you will need 1 cobblestone in the chest, and I will provide the planks in slot 1.
---The turtle.inspect() command does not work. I need to use a special inspect command that I don't know. 
---The local boolian command allows you to do a basic inspect command in a different form.
-
-local bool, stuff = turtle.inspect()
-
-function woodplanks()
+--The turtle.inspect() function does not work. There is a special inspect command that I need to use.
  
-  if stuff.name == "minecraft:cobblestone" then
-    turtle.suck()
-  end 
-    turtle.select( 1 )
-    turtle.drop()  
+local bool, stuff = turtle.inspect()
+ 
+function itemcheck()
+  turtle.suck()
+  stuff = turtle.getItemDetail(5)
 end
+ 
+function woodplanks()
+  itemcheck()
+  if stuff.name == "minecraft:cobblestone" then
+    turtle.select( 1 )
+    turtle.drop(1)
+  end
+end    
  
 --This one allows you to purchase regular wood blocks, provided that you can afford to give some stone.
 --You can put 1 stone in the chest, and I will give the wood in slot 2.
@@ -62,9 +65,5 @@ function oakfence()
 end
  
 --Now, I'll make the functions run.
---I put one function after the other so that if one doesn't work, it will go to the next one.
  
 woodplanks()
-wood()
-oakstairs()
-oakfence()
